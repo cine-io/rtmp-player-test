@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JWPlayer has an aspect-ratio bug</title>
+
+  <!-- video.js -->
+  <link href="/video-js/video-js.css" rel="stylesheet" type="text/css">
+  <script src="/video-js/video.js"></script>
+  <script>
+    videojs.options.flash.swf = "/video-js/video-js.swf";
+  </script>
+
+  <!-- Flowplayer -->
+  <script src="http://releases.flowplayer.org/js/flowplayer-3.2.13.min.js"></script>
+
+  <!-- JWPlayer -->
+  <script src="http://jwpsrv.com/library/sq8RfmIXEeOtdhIxOQfUww.js"></script>
+
+</head>
+<body>
+
+  <div style="vertical-align: top; display: inline-block; margin-right: 50px;">
+  <h2>Flowplayer</h2>
+  <a id="rtmpplayer" style="display:inline-block;width:360px;height:202px;">
+  </a>
+  <script>
+  flowplayer("rtmpplayer", "http://releases.flowplayer.org/swf/flowplayer-3.2.18.swf", {
+    plugins: {
+      rtmp: {
+        url: "http://releases.flowplayer.org/swf/flowplayer.rtmp-3.2.13.swf"
+      }
+    },
+    clip: {
+      provider: 'rtmp',
+      url: 'rtmp://fml.cine.io/20C45E/cines/WJEHqIqQr?adbe-live-event=WJEHqIqQr',
+      autoPlay: true,
+      live: true
+    },
+    log: {
+      level: 'debug',
+      filter: 'org.flowplayer.rtmp.*'
+    }
+  });
+  </script>
+  </div>
+
+  <div style="vertical-align: top; display: inline-block; margin-right: 50px;">
+  <h2>Video.js</h2>
+  <video id="video-js-player" class="video-js vjs-default-skin" controls preload="none" width="360" height="202"
+      data-setup='{ "controls": true, "autoplay": true, "preload": "auto" }'>
+    <source src="rtmp://fml.cine.io/20C45E/cines/WJEHqIqQr?adbe-live-event=WJEHqIqQr" type="rtmp/mp4" />
+    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+  </video>
+  <p><strong>Note:</strong> Because of <a href="https://github.com/videojs/video-js-swf/issues/55">this bug</a>, you'll need to go to full-screen then back again.</p>
+  </div>
+
+  <div style="vertical-align: top; display: inline-block; margin-right: 50px;">
+  <h2>JWPlayer</h2>
+  <div id='playerPgXusyDDSVNX'></div>
+  <script type='text/javascript'>
+      jwplayer('playerPgXusyDDSVNX').setup({
+          file: 'rtmp://fml.cine.io/20C45E/cines/WJEHqIqQr?adbe-live-event=WJEHqIqQr',
+          width: '360',
+          height: '202',
+          autostart: 'true'
+      });
+  </script>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "author": "cine.io",
+  "name": "jwp-aspect-bug",
+  "domains": [
+  ],
+  "version": "0.0.1",
+  "description": "Demonstrate the JWPlayer aspect ratio bug",
+  "main": "server.js",
+  "scripts": {},
+  "repository": "https://github.com/cine-io/jwp-aspect-bug",
+  "dependencies": {
+    "connect": "^2.15.0"
+  },
+  "devDependencies": {},
+  "license": "Copyrighted / All Rights Reserved",
+  "engines": {
+    "node": "0.10.x"
+  },
+  "private": true
+}
