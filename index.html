@@ -64,6 +64,7 @@
         clip: {
           provider: 'rtmp',
           url: rtmpUrl,
+          rtmpSubscribe: true,
           autoPlay: true,
           live: true
         },
@@ -78,6 +79,9 @@
           file: rtmpUrl,
           width: '360',
           height: '202',
+          rtmp: {
+            subscribe: true
+          },
           autostart: 'true'
       });
 
